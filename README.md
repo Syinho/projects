@@ -3,4 +3,4 @@
 
 ## 单页面练习
 ### jquery手风琴轮播图
-[预览地址]()
+[预览地址](https://syinho.github.io/projects/jquery手风琴轮播图——背景图片与缩略图一致/index.html)
