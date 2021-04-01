@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .bg-1 {
+            background: url('../images/pixiv/19c53f49e739b7649ab92218d39f62aafab344d8.png') no-repeat center / cover;
+        }
+
+        .bg-2 {
+            background: url('../images/pixiv/1fa190630bb347990d07d62688e80d7c.jpeg') no-repeat center / cover;
+        }
+
+        .bg-3 {
+            background: url('../images/pixiv/20200303225145_dwodh.jpg') no-repeat center / cover;
+        }
+
+        .bg-4 {
+            background: url('../images/pixiv/b08b-fxipenn0400574.jpg') no-repeat center / cover;
+        }
+
+        #container {
+            position: absolute;
+            width: 1000px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        ul {
+            height: 100%;
+        }
+
+        ul>li {
+            float: left;
+            position: relative;
+            width: 100px;
+            height: 100%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        ul>li::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: white;
+            opacity: .5;
+            transition: all .5s;
+        }
+
+        ul>li.cur::before {
+            opacity: 0;
+        }
+
+        ul>li:nth-child(1) {
+            background: url('../images/pixiv/19c53f49e739b7649ab92218d39f62aafab344d8.png') no-repeat center / cover;
+        }
+
+        ul>li:nth-child(2) {
+            background: url('../images/pixiv/1fa190630bb347990d07d62688e80d7c.jpeg') no-repeat center / cover;
+        }
+
+        ul>li:nth-child(3) {
+            background: url('../images/pixiv/20200303225145_dwodh.jpg') no-repeat center / cover;
+        }
+
+        ul>li:nth-child(4) {
+            background: url('../images/pixiv/b08b-fxipenn0400574.jpg') no-repeat center / cover;
+            width: 700px;
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            text-align: center;
+            color: bisque;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="bg bg-1"></div>
+        <div class="bg bg-2"></div>
+        <div class="bg bg-3"></div>
+        <div class="bg bg-4"></div>
+        <div id="container">
+            <ul>
+                <li>
+                    <div class="text">Lorem, ipsum.</div>
+                </li>
+                <li>
+                    <div class="text">Lorem, ipsum.</div>
+                </li>
+                <li>
+                    <div class="text">Lorem, ipsum.</div>
+                </li>
+                <li class="cur">
+                    <div class="text">Lorem, ipsum.</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../resources/jquery1.7.2.js"></script>
+    <script>
+        let timerLoop;
+        let curIndex;
+
+        function change() {
+            // 方法名：cur类名已经改写，根据cur类名对DOM进行操作
+            $('#container li').not('.cur').stop(false, true).animate({
+                'width': '100px'
+            }, 500, 'linear');
+            $('#container li.cur').stop(false, true).animate({
+                'width': '700px'
+            }, 500, 'linear');
+
+            $('.bg').stop(false, true).fadeOut(500);
+            $('.bg:eq(' + curIndex + ')').stop(false, true).fadeIn(500);
+
+            // 对当前li元素内没有cur类名的执行 宽度100px 的操作
+            // 对当前li元素内有cur类名的执行 宽度700px 的操作
+            // 对背景里所有项执行 fadeOut 操作
+            // 对 index与 li.cur 相同的 .bg 执行 fadeIn 操作
+        }
+
+        function setNextCur() {
+            // 方法名：设置下一项li元素为cur类
+            $('#container li').each(function (index) {
+                if ($(this).hasClass('cur')) {
+                    curIndex = index;
+                    curIndex++;
+
+                    if (curIndex == 4) {
+                        curIndex = 0;
+                    }
+                }
+            });
+
+            $('#container li').removeClass('cur');
+            $('#container li:eq(' + curIndex + ')').addClass('cur');
+            // 对li元素每一项进行判断：判断是否存在cur类名
+            // 找到有cur类名的li元素，对全部li元素执行删去cur类名的操作，对当前的下一项li元素执行添加cur类名的操作
+        }
+
+        function loopPlayback() {
+            timerLoop = setInterval(function () {
+                setNextCur();
+                change();
+            }, 3000);
+        }
+
+
+        function mouseOverChange() {
+            // 鼠标移动到li元素上，立刻停止所有循环函数，然后检查当前li元素是否是当前展示元素，如果不是则将当前li元素设置为cur类
+            $('#container li').mouseover(function () {
+                clearInterval(timerLoop);
+                if (!$(this).hasClass('cur')) {
+                    $('#container li').removeClass('cur');
+                    $(this).addClass('cur');
+                    $('#container li').each(function (index) {
+                        if ($(this).hasClass('cur')) {
+                            curIndex = index;
+                        }
+                    });
+
+                    change();
+                }
+            });
+        }
+
+        $(function () {
+            loopPlayback();
+            mouseOverChange();
+
+            $('#container li').mouseout(function () {
+                loopPlayback();
+            })
+        });
+    </script>
+</body>
+
+</html>
