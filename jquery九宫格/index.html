@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* reset start */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* reset end */
+        img {
+            vertical-align: bottom;
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        #box {
+            box-sizing: content-box;
+            width: 492px;
+            /* 150*3+2*6+5*6=492px */
+            height: 342px;
+            /* 100*3+2*6+5*6=342px */
+            border: 2px solid black;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        div.item {
+            box-sizing: content-box;
+            width: 150px;
+            height: 100px;
+            border: 2px solid grey;
+            border-radius: 5px;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+            margin: 5px;
+            cursor: move;
+        }
+
+        div.moving {
+            background: wheat;
+            border-color: #009ee0;
+        }
+
+        div.draging {
+            box-sizing: content-box;
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            border: 2px solid #009ee0;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px grey;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="item"><img src="./img/1.png" alt=""></div>
+        <div class="item"><img src="./img/2.png" alt=""></div>
+        <div class="item"><img src="./img/3.png" alt=""></div>
+        <div class="item"><img src="./img/4.png" alt=""></div>
+        <div class="item"><img src="./img/5.png" alt=""></div>
+        <div class="item"><img src="./img/6.png" alt=""></div>
+        <div class="item"><img src="./img/7.png" alt=""></div>
+        <div class="item"><img src="./img/8.png" alt=""></div>
+        <div class="item"><img src="./img/9.png" alt=""></div>
+    </div>
+    <script src="../resources/jquery1.7.2.js"></script>
+    <script>
+        /* 
+            canMove:能否移动，有div.item被移动时禁止移动其它
+            initX: initial_X 第一次点击的left值，距被点击元素的左内边界
+            $initDiv : 初始点击的div.item的jqeury对象
+            $clone1 : 初始点击的div.item的复制的jquery对象，由它来承担移动这一角色
+            cloPosX : $clone在鼠标位移期间的X轴位置
+
+            minDis : 最近距离
+            divIdx: 最近的那个 div.item 在 `div#box`中的位置
+
+            $target : 经过计算，距离 $clone1 触发 mouseup 事件时，距离其最近的那个 div.item
+        */
+        let canMove = true;
+        $(function () {
+            $('#box div').mousedown(function (e) {
+                e.preventDefault();
+                if (canMove) {
+                    // 第一阶段：按下鼠标左键
+                    canMove = false;
+                    let initX = e.offsetX;
+                    let initY = e.offsetY;
+                    let $initDiv = $(this);
+                    let $clone1 = $initDiv.clone();
+                    $clone1.addClass('draging').html($initDiv.html()).css({
+                        top: $initDiv.position().top,
+                        left: $initDiv.position().left
+                    }).appendTo('#box');
+                    $initDiv.addClass('moving').html('');
+
+                    // 第二阶段:移动
+                    $('#box').mousemove(function (e) {
+                        let cloPosX = e.pageX - $(this).offset().left - initX;
+                        let cloPosY = e.pageY - $(this).offset().top - initY;
+                        $clone1.css({
+                            top: cloPosY,
+                            left: cloPosX
+                        });
+                    });
+
+                    // 第三阶段：释放
+                    $clone1.mouseup(function (e) {
+                        $('#box').off('mousemove');
+                        let minDis = 1000;;
+                        let divIdx;
+                        // 1.计算每一个的距离
+                        $('#box div').not(':last').each(function (index, value) {
+                            let dis = calcDis($clone1, $(this));
+                            if (dis < minDis) {
+                                minDis = dis;
+                                divIdx = $(this).index();
+                            }
+                        });
+                        console.log('minDis:' + minDis);
+                        console.log('divIndex:' + divIdx);
+
+
+                        // 2.首先确认原位置是否是最近一个
+                        if ($initDiv.index() == divIdx) {
+                            $clone1.stop(false, true).animate($initDiv.position(), 300,
+                                function () {
+                                    $initDiv.html($clone1.html()).removeClass('moving');
+                                    $clone1.remove();
+                                    canMove = true;
+                                });
+                        } else {
+                            // 3.更替动画
+                            let $target = $('#box div').eq(divIdx);
+                            let $clone2 = $target.clone();
+                            $clone2.css({
+                                top: $target.position().top,
+                                left: $target.position().left
+                            }).addClass('draging').appendTo('#box');
+                            $target.html('').addClass('moving');
+                            $clone1.stop(false, true).animate($target.position(), 300,
+                                function () {
+                                    $target.html($clone1.html()).removeClass('moving');
+                                    $initDiv.removeClass('moving');
+                                    $clone1.remove();
+                                });
+                            $clone2.stop(false, true).animate($initDiv.position(), 300,
+                                function () {
+                                    $initDiv.html($clone2.html()).removeClass('moving');
+                                    $initDiv.removeClass('moving');
+                                    $clone2.remove();
+                                    canMove = true;
+                                });
+                        };
+                    })
+                }
+            })
+        });
+
+        function calcDis($this, $target) {
+            let $thisX = $this.position().left;
+            let $thisY = $this.position().top;
+            let $targetX = $target.position().left;
+            let $targetY = $target.position().top;
+
+            return Math.sqrt(Math.pow($thisX - $targetX, 2) + Math.pow($thisY - $targetY, 2));
+        }
+    </script>
+</body>
+
+</html>
