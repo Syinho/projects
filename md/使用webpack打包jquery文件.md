@@ -1,0 +1,3 @@
+- 使用`webpack.Dllplugin`将jquery文件大白成单独的dll动态链接资源库
+- 将主文件写成函数打包出去
+- 在`index.js`文件中引入jquery文件，但是jquery文件不会被打包到`bundle.js`文件中去
