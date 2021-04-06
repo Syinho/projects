@@ -1,0 +1,8 @@
+{
+    "parser": "babel-eslint",
+    "rules": {
+        "no-plusplus": ["off", {
+            "allowForLoopAfterthoughts": true
+        }]
+    }
+}
