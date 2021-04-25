@@ -1,0 +1,42 @@
+/* partnerContent start */
+
+.partnerContent1 {
+    padding: 50px;
+    float: left;
+    width: 400px;
+    transition: 1s;
+}
+
+.partnerContent2 {
+    padding: 50px;
+    float: right;
+    width: 400px;
+    transition: 1s;
+}
+
+.partnerContent3 {
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    margin-left: -472px;
+}
+
+.partnerContent3 li {
+    width: 118px;
+    height: 448px;
+    /* overflow: hidden; */
+    background: url('../img/team.png') no-repeat;
+    /* 944*448 */
+    float: left;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#cvs {
+    position: absolute;
+    left: 0;
+    bottom: 100px;
+    cursor: pointer;
+}
+
+/* partnerContent end */

@@ -1,0 +1,155 @@
+/* homeContent start */
+
+.homeContent1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.homeContent1 li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background-size: cover;
+}
+
+.homeContent1 li.active {
+    visibility: visible;
+    transform: translateZ(0);
+}
+
+.homeContent1 li:nth-of-type(1) {
+    background-image: url('../img/home1.jpg');
+}
+
+.homeContent1 li:nth-of-type(2) {
+    background-image: url('../img/home2.jpg');
+}
+
+.homeContent1 li:nth-of-type(3) {
+    background-image: url('../img/home3.jpg');
+}
+
+.homeContent1 li:nth-of-type(4) {
+    background-image: url('../img/home4.jpg');
+}
+
+@keyframes homeLeftHide {
+    0% {
+        transform: translateZ(0);
+        visibility: visible;
+    }
+
+    40% {
+        transform: translateX(-40%) scale(0.8) rotateY(30deg);
+    }
+
+    100% {
+        transform: translateZ(-200px);
+    }
+}
+
+@keyframes homeLeftShow {
+    0% {
+        transform: translateZ(-200px);
+    }
+
+    40% {
+        transform: translateX(-40%) scale(0.8) rotateY(30deg);
+    }
+
+    100% {
+        transform: translateZ(0px);
+    }
+}
+
+@keyframes homeRightHide {
+    0% {
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+
+    40% {
+        transform: translateX(40%) scale(0.8) rotateY(-30deg);
+    }
+
+    100% {
+        transform: translateZ(-200px);
+    }
+}
+
+@keyframes homeRightShow {
+    0% {
+        transform: translateZ(-200px);
+    }
+
+    40% {
+        transform: translateX(40%) scale(0.8) rotateY(-30deg);
+    }
+
+    100% {
+        transform: translateZ(0);
+    }
+}
+
+.homeContent1 li.leftHide {
+    animation: homeLeftHide 1s;
+}
+
+.homeContent1 li.leftShow {
+    animation: homeLeftShow 1s;
+    visibility: visible;
+    z-index: 1;
+}
+
+.homeContent1 li.rightHide {
+    animation: homeRightHide 1s;
+}
+
+.homeContent1 li.rightShow {
+    animation: homeRightShow 1s;
+    visibility: visible;
+    z-index: 1;
+}
+
+.homeContent1 h1 {
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}
+
+.homeContent2 {
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    display: table;
+    word-spacing: -1em;
+    text-align: center;
+    transition: 1s;
+}
+
+.homeContent2 li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 2px 2px rgba(25, 25, 25, .8);
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.homeContent2 li.active {
+    background-color: #fff;
+}
+
+/* homeContent end */

@@ -1,0 +1,201 @@
+/* worksContent start */
+
+.worksContent1 {
+    position: relative;
+    padding: 50px 0 100px 50px;
+    z-index: 1;
+}
+
+.worksContent2 {
+    position: relative;
+    padding-left: 50px;
+    z-index: 1;
+}
+
+.worksImgParent {
+    position: relative;
+    float: left;
+    width: 220px;
+    height: 133px;
+    margin: 0 1px;
+    overflow: hidden;
+}
+
+.worksImgParent:last-of-type {
+    width: 332px;
+}
+
+.worksImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: 1s;
+}
+
+.worksImgMask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(25, 25, 25, .8);
+    z-index: 1;
+    opacity: 0;
+    transition: 1s;
+    color: white;
+    padding: 15px;
+}
+
+.worksImgParent:hover .worksImgMask {
+    opacity: 1;
+}
+
+.worksImgParent:hover .worksImg {
+    transform: scale(1.5) rotateZ(20deg);
+}
+
+.worksImgMask div {
+    position: absolute;
+    /* 32x68 */
+    width: 32px;
+    height: 34px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('../img/zoomico.png') no-repeat 0 0 / cover;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.worksImgMask div:hover {
+    background-position: 0 -34px;
+}
+
+.worksContent3 {
+    position: absolute;
+    width: 119px;
+    height: 191px;
+    top: 170px;
+    left: 700px;
+    background: url('../img/robot.png') no-repeat center center / cover;
+    animation: robotMove 10s linear infinite;
+    z-index: 2;
+}
+
+@keyframes robotMove {
+    0% {
+        left: 700px;
+        transform: rotateY(0);
+    }
+
+    49% {
+        left: 450px;
+        transform: rotateY(0);
+    }
+
+    50% {
+        left: 450px;
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        left: 700px;
+        transform: rotateY(180deg);
+    }
+}
+
+.pencel1 {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    top: 0;
+    left: 500px;
+    background: url('../img/pencel1.png') no-repeat 0 0 / cover;
+    transition: 1s;
+}
+
+.pencel2 {
+    position: absolute;
+    width: 268px;
+    height: 100px;
+    top: 250px;
+    left: 300px;
+    background: url('../img/pencel2.png') no-repeat 0 0 / cover;
+    transition: 1s;
+}
+
+.pencel3 {
+    position: absolute;
+    width: 441px;
+    height: 200px;
+    top: 140px;
+    left: 720px;
+    background: url('../img/pencel3.png') no-repeat 0 0 / cover;
+    transition: 1s;
+}
+
+.showImgParent {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(25, 25, 25, .5);
+    z-index: 30;
+    opacity: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.showImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.cancelBtn {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+
+
+.cancelBtn>div {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background-color: #fff;
+    transform-origin: center center;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    transition: 1s;
+}
+
+.cancelBtn>div:nth-of-type(1) {
+    transform: rotateZ(45deg);
+}
+
+.cancelBtn>div:nth-of-type(2) {
+    transform: rotateZ(-45deg);
+}
+
+.cancelBtn:hover>div:nth-of-type(1) {
+    transform: rotateZ(225deg);
+}
+
+.cancelBtn:hover>div:nth-of-type(2) {
+    transform: rotateZ(135deg);
+}
+
+
+/* worksContent end */

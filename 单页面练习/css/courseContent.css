@@ -1,0 +1,98 @@
+/* courseContent start */
+.courseContent1 {
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.courseContent2 {
+    padding-left: 50px;
+    width: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.courseContent3 {
+    width: 480px;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    z-index: 1;
+}
+
+.courseLogo {
+    width: 120px;
+    height: 132px;
+    float: left;
+    margin-top: 1px;
+    position: relative;
+    cursor: pointer;
+    perspective: 800px;
+}
+
+.courseBefore {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.courseAfter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    text-indent: 2em;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.courseLogo:hover .courseBefore {
+    transform: rotateY(180deg);
+}
+
+.courseLogo:hover .courseAfter {
+    transform: rotateY(0deg);
+}
+
+.plane1 {
+    position: absolute;
+    top: -100px;
+    left: 300px;
+    width: 359px;
+    height: 283px;
+    background: url('../img/plane1.png') no-repeat;
+    transition: 1s;
+}
+
+.plane2 {
+    position: absolute;
+    top: 200px;
+    left: -100px;
+    width: 309px;
+    height: 249px;
+    background: url('../img/plane2.png') no-repeat;
+    transition: 1s;
+}
+
+.plane3 {
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    width: 230px;
+    height: 182px;
+    background: url('../img/plane3.png') no-repeat;
+    transition: 1s;
+}
+
+/* courseContent end */

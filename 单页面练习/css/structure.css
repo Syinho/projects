@@ -1,0 +1,151 @@
+/* structure start */
+#main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+}
+
+#headerMain {
+    position: relative;
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#logo {
+    margin-top: 39px;
+    float: left;
+    margin-right: 15px;
+}
+
+#music {
+    float: left;
+    width: 14px;
+    height: 14px;
+    background: url('../img/musicoff.gif') no-repeat center / cover;
+    margin-top: 56px;
+    cursor: pointer;
+}
+
+#nav {
+    margin-top: 50px;
+    float: right;
+}
+
+#nav li {
+    float: left;
+    margin-left: 25px;
+    position: relative;
+    font: 14px "微软雅黑";
+}
+
+#nav li .up {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width .5s;
+    overflow: hidden;
+    color: black;
+}
+
+#nav li:hover .up {
+    width: 100%;
+}
+
+#arrow {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    border: 10px solid transparent;
+    border-top-color: white;
+    transition: left .5s;
+}
+
+#content {
+    position: relative;
+    width: 100%;
+    /* height由js决定 */
+    overflow: hidden;
+}
+
+#menu {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 5;
+}
+
+#menu li {
+    width: 13px;
+    height: 13px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: 0 0 2px rgba(25, 25, 25, .8);
+    margin: 7px;
+    cursor: pointer;
+}
+
+#menu li.active {
+    background-color: #fff;
+}
+
+#list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height 自适应 */
+    transition: top .5s;
+    overflow: hidden;
+}
+
+#list li.liList {
+    width: 2000px;
+    /* height 由js决定 */
+    position: relative;
+    margin-left: -1000px;
+    left: 50%;
+    overflow: hidden;
+}
+
+#list div.divList {
+    width: 1100px;
+    height: 520px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#home {
+    background: url('../img/bg1.jpg') no-repeat;
+}
+
+#course {
+    background: url('../img/bg3.jpg') no-repeat;
+}
+
+#works {
+    background: url('../img/bg4.jpg') no-repeat;
+}
+
+#about {
+    background: url('../img/bg5.jpg') no-repeat;
+}
+
+#partner {
+    background: url('../img/bg2.jpg') no-repeat;
+}
+
+/* structure end */
