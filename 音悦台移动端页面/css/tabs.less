@@ -1,0 +1,126 @@
+@rem: 1080/10rem;
+
+#tabs {
+    width: (1046/@rem);
+    background-color: #fff;
+    margin: 0 auto;
+
+    .tabs-header {
+        height: (135/@rem);
+        line-height: (135/@rem);
+
+        span:nth-of-type(1) {
+            font-size: (74/@rem);
+            font-weight: bold;
+            color: #000;
+            float: left;
+        }
+
+        span:nth-of-type(2) {
+            float: right;
+        }
+    }
+
+    nav {
+        height: (105/@rem);
+        line-height: (105/@rem);
+        font-size: 0;
+        position: relative;
+
+        div.item {
+            display: inline-block;
+            width: (120/@rem);
+            height: (105/@rem);
+            font-size: (44/@rem);
+            text-align: center;
+            color: #6f900d;
+        }
+
+        .bottom-move {
+            width: (120/@rem);
+            height: (9/@rem);
+            background-color: #6f900d;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all .5s;
+        }
+    }
+
+    #tabs-container {
+        overflow: hidden;
+
+        #tabs-wrapper {
+            .swiper-slide {
+                vertical-align: top;
+                .loading {
+                    width: 100%;
+                    height: (101/@rem);
+                    background-image: url('../img/loading.gif');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .content-list {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    .content {
+                        box-sizing: border-box;
+                        width: (506/@rem);
+                        margin: (8/@rem);
+                        padding: (5/@rem);
+                        background-color: #efefef;
+                        color: #000;
+                        font-size: 0;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .content-header {
+                            font-size: (40/@rem);
+                        }
+
+                        .info {
+                            display: flex;
+                            justify-content: start;
+                            font-size: (40/@rem);
+
+
+                            .play-info {
+                                display: flex;
+                                justify-content: start;
+
+                                .play-icon {
+                                    display: block;
+                                    width: 20px;
+                                    height: 17px;
+                                    background-image: url('../img/ice.png');
+                                    background-repeat: no-repeat;
+                                    background-position: center 4px;
+                                }
+                            }
+
+                            .message-info {
+                                display: flex;
+                                justify-content: start;
+
+                                .message-icon {
+                                    display: block;
+                                    background-image: url('../img/ice.png');
+                                    width: 20px;
+                                    height: 17px;
+                                    background-repeat: no-repeat;
+                                    background-position: center -15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

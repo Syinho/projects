@@ -1,0 +1,104 @@
+#tabs {
+  width: 9.68518519rem;
+  background-color: #fff;
+  margin: 0 auto;
+}
+#tabs .tabs-header {
+  height: 1.25rem;
+  line-height: 1.25rem;
+}
+#tabs .tabs-header span:nth-of-type(1) {
+  font-size: 0.68518519rem;
+  font-weight: bold;
+  color: #000;
+  float: left;
+}
+#tabs .tabs-header span:nth-of-type(2) {
+  float: right;
+}
+#tabs nav {
+  height: 0.97222222rem;
+  line-height: 0.97222222rem;
+  font-size: 0;
+  position: relative;
+}
+#tabs nav div.item {
+  display: inline-block;
+  width: 1.11111111rem;
+  height: 0.97222222rem;
+  font-size: 0.40740741rem;
+  text-align: center;
+  color: #6f900d;
+}
+#tabs nav .bottom-move {
+  width: 1.11111111rem;
+  height: 0.08333333rem;
+  background-color: #6f900d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+#tabs #tabs-container {
+  overflow: hidden;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide {
+  vertical-align: top;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .loading {
+  width: 100%;
+  height: 0.93518519rem;
+  background-image: url('../img/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content {
+  box-sizing: border-box;
+  width: 4.68518519rem;
+  margin: 0.07407407rem;
+  padding: 0.0462963rem;
+  background-color: #efefef;
+  color: #000;
+  font-size: 0;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content img {
+  width: 100%;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .content-header {
+  font-size: 0.37037037rem;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .info {
+  display: flex;
+  justify-content: start;
+  font-size: 0.37037037rem;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .info .play-info {
+  display: flex;
+  justify-content: start;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .info .play-info .play-icon {
+  display: block;
+  width: 20px;
+  height: 17px;
+  background-image: url('../img/ice.png');
+  background-repeat: no-repeat;
+  background-position: center 4px;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .info .message-info {
+  display: flex;
+  justify-content: start;
+}
+#tabs #tabs-container #tabs-wrapper .swiper-slide .content-list .content .info .message-info .message-icon {
+  display: block;
+  background-image: url('../img/ice.png');
+  width: 20px;
+  height: 17px;
+  background-repeat: no-repeat;
+  background-position: center -15px;
+}

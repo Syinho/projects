@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/iconfont1/font_xxyh7rf8h9b/iconfont.css">
+    <style>
+        /* reset start */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: #999;
+        }
+
+        /* reset end */
+        #navBar {
+            width: 100%;
+            height: 30px;
+            background-color: #e3e4e5;
+            border-bottom: 1px solid #ccc;
+            font-size: 12px;
+            position: relative;
+        }
+
+        #container {
+            width: 1190px;
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #ccc;
+            background-color: #e3e4e5;
+            margin: 0 auto;
+            color: #999;
+        }
+
+        .focusFont:hover {
+            color: #f20215;
+        }
+
+        #location {
+            float: left;
+            position: relative;
+        }
+
+        #nav {
+            float: right;
+        }
+
+        .item {
+            float: left;
+            position: relative;
+        }
+
+        .navCtx {
+            padding: 0 7px;
+        }
+
+        .interval {
+            width: 1px;
+            height: 12px;
+            background-color: #ccc;
+            float: left;
+            margin: 9px 5px 0 5px;
+        }
+
+        /* navBar hover背景变白并且有下拉菜单 */
+        .navBar {
+            border: 1px solid transparent;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+            /* padding: 0 7px; */
+            z-index: 1;
+        }
+
+        .navBar:hover {
+            background-color: #fff;
+            border-color: #ccc;
+            border-bottom-color: #fff;
+        }
+
+        .location {
+            padding: 0 7px;
+            z-index: 1;
+        }
+
+        .details {
+            position: absolute;
+            top: 29px;
+            left: 0px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 0 #999;
+            display: none;
+        }
+
+        .details_add {
+            width: 322px;
+            padding: 10px;
+        }
+
+        .navBar:hover+.details{
+            display: block;
+        }
+        .details:hover{
+            display: block;
+        }
+
+        .member {
+            float: left;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .member_add {
+            width: 60px;
+            padding: 0 2px;
+        }
+
+        .member>a {
+            padding: 0 8px;
+        }
+
+        .member:hover>a {
+            color: #f20215;
+        }
+
+        .member:hover {
+            background-color: #e3e4e5;
+        }
+
+        .member_special:hover {
+            background-color: #fff;
+        }
+
+        .division {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            float: left;
+            margin: 10px 0;
+
+        }
+
+        .division_add {
+            padding: 0 10px;
+            background-clip: content-box;
+        }
+
+        .member_header {
+            float: left;
+        }
+
+        .member::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 15px;
+            height: 12px;
+            margin-right: 8px;
+            overflow: hidden;
+            background-image: url('./public/img/地区.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        .details_myjd {
+            width: 265px;
+            padding: 10px 0 10px 15px;
+            overflow: hidden;
+        }
+
+        .member_myjd {
+            width: 124px;
+        }
+        .division_myjd{
+            width: 120%;
+            margin-left: -15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="container">
+            <div id="location">
+                <div class="location navBar navCtx">
+                    <i class=" iconfont icon-location" style="color: #f20215;"></i>
+                    <a href="#" class="focusFont">北京</a>
+                </div>
+                <ul class="details details_add">
+                    <li class="member member_add"><a href="#">北京</a></li>
+                    <li class="member member_add"><a href="#">上海</a></li>
+                    <li class="member member_add"><a href="#">天津</a></li>
+                    <li class="member member_add"><a href="#">重庆</a></li>
+                    <li class="member member_add"><a href="#">河北</a></li>
+                    <li class="member member_add"><a href="#">山西</a></li>
+                    <li class="member member_add"><a href="#">河南</a></li>
+                    <li class="member member_add"><a href="#">辽宁</a></li>
+                    <li class="member member_add"><a href="#">吉林</a></li>
+                    <li class="member member_add"><a href="#">黑龙江</a></li>
+                    <li class="member member_add"><a href="#">内蒙古</a></li>
+                    <li class="member member_add"><a href="#">江苏</a></li>
+                    <li class="member member_add"><a href="#">山东</a></li>
+                    <li class="member member_add"><a href="#">安徽</a></li>
+                    <li class="member member_add"><a href="#">浙江</a></li>
+                    <li class="member member_add"><a href="#">福建</a></li>
+                    <li class="member member_add"><a href="#">湖北</a></li>
+                    <li class="member member_add"><a href="#">湖南</a></li>
+                    <li class="member member_add"><a href="#">广东</a></li>
+                    <li class="member member_add"><a href="#">广西</a></li>
+                    <li class="member member_add"><a href="#">江西</a></li>
+                    <li class="member member_add"><a href="#">贵州</a></li>
+                    <li class="member member_add"><a href="#">海南</a></li>
+                    <li class="member member_add"><a href="#">四川</a></li>
+                    <li class="member member_add"><a href="#">云南</a></li>
+                    <li class="member member_add"><a href="#">西藏</a></li>
+                    <li class="member member_add"><a href="#">陕西</a></li>
+                    <li class="member member_add"><a href="#">甘肃</a></li>
+                    <li class="member member_add"><a href="#">青海</a></li>
+                    <li class="member member_add"><a href="#">宁夏</a></li>
+                    <li class="member member_add"><a href="#">新疆</a></li>
+                    <li class="member member_add"><a href="#">港澳</a></li>
+                    <li class="member member_add"><a href="#">台湾</a></li>
+                    <li class="member member_add"><a href="#">钓鱼岛</a></li>
+                    <li class="member member_add"><a href="#">海外</a></li>
+                    <span class="division division_add"></span>
+                    <li style="display: block;text-align: left;padding-left: 8px;cursor: text;float: left;">地区专享版本</li>
+                    <li class="member member_special" style="width: 50%;clear: left;"><a href="#">中國台灣</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#">京东全球</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#">中國港澳</a></li>
+                    <span class="division division_add"></span>
+                    <li style="display: block;text-align: left;padding-left: 8px;cursor: text;float: left;">Available Sites</li>
+                    <li class="member member_special" style="width: 50%;clear: left;"><a href="#"><i class="icon"></i>Global Site</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#"><i class="icon" style="background-position: -20px 0;"></i>Сайт
+                            России</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#"><i class="icon"
+                                style="background-position: 0px -15px;"></i>Situs Indonesia</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#"><i class="icon"
+                                style="background-position: -40px 0px;"></i>Sitio de España</a></li>
+                    <li class="member member_special" style="width: 50%;"><a href="#"><i class="icon"
+                                style="background-position: -20px -15px;"></i>เว็บไซต์ประเทศไทย</a></li>
+                </ul>
+            </div>
+            <ul id="nav">
+                <li class="item">
+                    <div class="navCtx">
+                        <a href="#" class="focusFont">你好，请登录</a>&nbsp;&nbsp;<a href="#" style="color: #f20215;">免费注册</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navCtx">
+                        <a href="#" class="focusFont">我的订单</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navBar navCtx">
+                        <a href="#" class="focusFont">我的京东</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;overflow: hidden;font-size: 5px;"></i>
+                    </div>
+                    <ul class="details details_myjd ">
+                        <li class="member member_myjd"><a href="#">待处理订单</a></li>
+                        <li class="member member_myjd"><a href="#">我的问答</a></li>
+                        <li class="member member_myjd"><a href="#">返修退换货</a></li>
+                        <li class="member member_myjd"><a href="#">我的关注</a></li>
+                        <li class="member member_myjd"><a href="#">降价商品</a></li>
+                        <span class="division division_myjd" style="clear: left;"></span>
+                        <li class="member member_myjd" style="clear: left;"><a href="#">我的京豆</a></li>
+                        <li class="member member_myjd"><a href="#">我的优惠券</a></li>
+                        <li class="member member_myjd"><a href="#">我的白条</a></li>
+                        <li class="member member_myjd"><a href="#">我的理财</a></li>
+                    </ul>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navCtx">
+                        <a href="#" class="focusFont">京东会员</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navBar navCtx">
+                        <a href="#" style="color: #f20215;">企业采购</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navBar navCtx">
+                        <a href="#">客户服务</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navBar navCtx">
+                        <a href="#">网站导购</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="item">
+                    <div class="navCtx">
+                        <a href="#">手机京东</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

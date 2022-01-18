@@ -1,0 +1,43 @@
+#app {
+    .swiper-container {
+        width: 100%;
+        position: relative;
+        font-size: 0;
+
+        .swiper-wrapper {
+            white-space: nowrap;
+            letter-spacing: -1em;
+
+            .swiper-slide {
+                display: inline-block;
+
+                img {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 10px;
+            font-size: 0;
+            z-index: 10;
+            text-align: center;
+
+            li {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 5px;
+                background-color: #fff;
+
+                &.active {
+                    background-color: darkorange;
+                }
+            }
+        }
+    }
+}

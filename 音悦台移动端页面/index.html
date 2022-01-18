@@ -1,0 +1,484 @@
+<!--
+ * @Author: donglei
+ * @Date: 2021-10-13 20:44:51
+ * @LastEditors: donglei
+ * @LastEditTime: 2021-11-01 15:04:35
+ * @Description: file content
+ * @FilePath: \projects\音悦台移动端页面\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/rubberBandNav.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <link rel="stylesheet" href="./css/tabs.css"> -->
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body>
+    <div id="app">
+        <header id="headerMain">
+            <div id="headerTop">
+                <a href="javascript:;" class="logo"><img src="./img/logo.png" alt=""></a>
+                <div class="menu-btn hidden"></div>
+                <div class="btn-group">
+                    <button class="search-btn-small">搜索</button>
+                    <button class="login-btn">登录</button>
+                    <button class="register-btn">注册</button>
+                </div>
+            </div>
+            <div id="headerBottom">
+                <input type="text" class="input-text" placeholder="请输入搜索内容...">
+                <button class="search-btn-large">搜索</button>
+            </div>
+            <ul id="headerHiddenMenu">
+                <li>
+                    <a href="javascript:">首页</a>
+                </li>
+                <li>
+                    <a href="javascript:">MV</a>
+                </li>
+                <li>
+                    <a href="javascript:">悦单</a>
+                </li>
+                <li>
+                    <a href="javascript:">V榜</a>
+                </li>
+                <li>
+                    <a href="javascript:">音悦</a>
+                </li>
+                <li>
+                    <a href="javascript:">商城</a>
+                </li>
+                <li>
+                    <a href="javascript:">节目</a>
+                </li>
+                <li>
+                    <a href="javascript:">饭团</a>
+                </li>
+                <li>
+                    <a href="javascript:">资讯</a>
+                </li>
+                <li>
+                    <a href="javascript:">我的家</a>
+                </li>
+                <li>
+                    <a href="javascript:">APP下载</a>
+                </li>
+                <li>
+                    <a href="javascript:">热门应用</a>
+                </li>
+            </ul>
+        </header>
+        <section id="container">
+            <div id="brandNavContainer">
+                <ul id="brandNavWrapper" class="wrapper">
+                    <li class="active">
+                        <a href="javascript:">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">MV</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">悦单</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">V榜</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">音悦</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">商城</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">节目</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">饭团</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">资讯</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">我的家</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">APP下载</a>
+                    </li>
+                    <li>
+                        <a href="javascript:">热门应用</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-container" id="swiperFirst">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><img src="./img/1.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="./img/2.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="./img/3.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="./img/4.jpg" alt=""></li>
+                    <li class="swiper-slide"><img src="./img/5.jpg" alt=""></li>
+                </ul>
+            </div>
+            <div id="tabs">
+                <div id="firstTab" class="floor">
+                    <div class="tabs-header">
+                        <span>MV首播</span>
+                        <span>更多 > </span>
+                    </div>
+                    <nav>
+                        <div class="item">内地</div>
+                        <div class="item">港台</div>
+                        <div class="item">欧美</div>
+                        <div class="item">韩国</div>
+                        <div class="bottom-move"></div>
+                    </nav>
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <ul class="content-list">
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="secondTab" class="floor">
+                    <div class="tabs-header">
+                        <span>MV首播</span>
+                        <span>更多 > </span>
+                    </div>
+                    <nav>
+                        <div class="item">内地</div>
+                        <div class="item">港台</div>
+                        <div class="item">欧美</div>
+                        <div class="item">韩国</div>
+                        <div class="bottom-move"></div>
+                    </nav>
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <ul class="content-list">
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="thirdTab" class="floor">
+                    <div class="tabs-header">
+                        <span>MV首播</span>
+                        <span>更多 > </span>
+                    </div>
+                    <nav>
+                        <div class="item">内地</div>
+                        <div class="item">港台</div>
+                        <div class="item">欧美</div>
+                        <div class="item">韩国</div>
+                        <div class="bottom-move"></div>
+                    </nav>
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <ul class="content-list">
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="content">
+                                        <img src="./img/a.jpg" alt="">
+                                        <div class="content-header">标题示例</div>
+                                        <div class="info">
+                                            <div class="play-info">
+                                                <div class="play-icon"></div>
+                                                <div>1024</div>
+                                            </div>
+                                            <div class="message-info">
+                                                <div class="message-icon"></div>
+                                                <div>8864</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="loading"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/transformCSS.js"></script>
+    <script src="./js/tweenAnimation.js"></script>
+    <script src="./js/rubberBandNav.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/scrollTouch.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

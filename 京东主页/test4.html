@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/iconfont1/font_xxyh7rf8h9b/iconfont.css">
+    <style>
+        /* reset start */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+        }
+
+        /* body {
+            overflow: hidden;
+        } */
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: #999;
+        }
+
+        /* reset end */
+        #navBar {
+            width: 100%;
+            height: 30px;
+            background-color: #e3e4e5;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #navContent {
+            background-color: #e3e4e5;
+            width: 1190px;
+            height: 28px;
+            margin: 0 auto;
+            position: relative;
+            line-height: 28px;
+        }
+
+        #location {
+            float: left;
+            position: relative;
+        }
+
+        #nav {
+            float: right;
+        }
+
+        #nav>li {
+            float: left;
+            position: relative;
+        }
+
+        .hoverChange:hover {
+            color: #f20215;
+        }
+
+        .interval {
+            float: left;
+            width: 1px;
+            height: 12px;
+            margin: 9px 5px 0 5px;
+            background-color: #ccc;
+        }
+
+        .dt,
+        .aLiNav {
+            padding: 0 7px;
+        }
+
+        .dt {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dt:hover {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            /* border-bottom: 1px solid #fff; */
+        }
+
+        .dd {
+            position: absolute;
+            top: 31px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 0 #999;
+        }
+
+        .dd_location {
+            width: 300px;
+        }
+
+        .dd_location>li {
+            float: left;
+            width: 60px;
+            padding: 0 2px;
+        }
+
+        .dd_location>li>a {
+            padding: 0 8px;
+        }
+
+        .dd_myjd {
+            width: 280px;
+        }
+
+        .dd_myjd>li {
+            width: 126px;
+            float: left;
+        }
+
+        .dd_myjd>span {
+            width: 100%;
+            height: 1px;
+            background-color: #999;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="navContent">
+            <div id="location">
+                <div class="dt">
+                    <i class="iconfont icon-location" style="color: #f20215;"></i>
+                    <a href="#" class="hoverChange">北京</a>
+                </div>
+                <ul class="dd dd_location">
+                    <li><a href="#">北京</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">天津</a></li>
+                    <li><a href="#">重庆</a></li>
+                    <li><a href="#">河北</a></li>
+                    <li><a href="#">山西</a></li>
+                    <li><a href="#">河南</a></li>
+                    <li><a href="#">辽宁</a></li>
+                    <li><a href="#">吉林</a></li>
+                    <li><a href="#">黑龙江</a></li>
+                    <li><a href="#">内蒙古</a></li>
+                    <li><a href="#">江苏</a></li>
+                    <li><a href="#">山东</a></li>
+                    <li><a href="#">安徽</a></li>
+                    <li><a href="#">浙江</a></li>
+                    <li><a href="#">福建</a></li>
+                    <li><a href="#">湖北</a></li>
+                    <li><a href="#">湖南</a></li>
+                    <li><a href="#">广东</a></li>
+                    <li><a href="#">广西</a></li>
+                    <li><a href="#">江西</a></li>
+                    <li><a href="#">贵州</a></li>
+                    <li><a href="#">海南</a></li>
+                    <li><a href="#">四川</a></li>
+                    <li><a href="#">云南</a></li>
+                    <li><a href="#">西藏</a></li>
+                    <li><a href="#">陕西</a></li>
+                    <li><a href="#">甘肃</a></li>
+                    <li><a href="#">青海</a></li>
+                    <li><a href="#">宁夏</a></li>
+                    <li><a href="#">新疆</a></li>
+                    <li><a href="#">港澳</a></li>
+                    <li><a href="#">台湾</a></li>
+                    <li><a href="#">钓鱼岛</a></li>
+                    <li><a href="#">海外</a></li>
+                </ul>
+            </div>
+            <ul id="nav">
+                <li>
+                    <div class="aLiNav">
+                        <a href="#" class="hoverChange">你好，请登录</a>&nbsp;&nbsp;<a href="#" style="color: #f20215;">免费注册</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="aLiNav">
+                        <a href="#" class="hoverChange">我的订单</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="dt">
+                        <a href="#" class="hoverChange">我的京东</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;overflow: hidden;font-size: 5px;"></i>
+                    </div>
+                    <div class="dd dd_myjd">
+                        <ul>
+                            <li><a href="#">待处理订单</a></li>
+                            <li><a href="#">我的问答</a></li>
+                            <li><a href="#">返修退换货</a></li>
+                            <li><a href="#">我的关注</a></li>
+                            <li><a href="#">降价商品</a></li>
+                        </ul>
+                        <span></span>
+                        <ul class="">
+                            <li><a href="#">我的京豆</a></li>
+                            <li><a href="#">我的优惠券</a></li>
+                            <li><a href="#">我的白条</a></li>
+                            <li><a href="#">我的理财</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="aLiNav">
+                        <a href="#" class="hoverChange">京东会员</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="dt">
+                        <a href="#" style="color: #f20215;">企业采购</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="dt">
+                        <a href="#">客户服务</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="dt">
+                        <a href="#">网站导航</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="aLiNav">
+                        <a href="#">手机京东</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

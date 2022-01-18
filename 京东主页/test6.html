@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/iconfont1/font_xxyh7rf8h9b/iconfont.css">
+    <style>
+        /* reset start */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+        }
+
+        /* body {
+            overflow: hidden;
+        } */
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: #999;
+        }
+
+        a:hover {
+            color: #f20215;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* reset end */
+        #navBar {
+            width: 100%;
+            height: 30px;
+            background-color: #e3e4e5;
+            border-bottom: 1px solid #ccc;
+            position: relative;
+        }
+
+        #navContainer {
+            width: 1190px;
+            height: 30px;
+            position: relative;
+            margin: 0 auto;
+            background-color: #e3e4e5;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #locationContainer {
+            float: left;
+            width: 322px;
+            /* 60*5+20+2 */
+        }
+
+        #locationDisplayArea {
+            top: 0;
+            left: 0;
+        }
+
+        #locationBtn {}
+
+        .detailsContainer {
+            position: relative;
+        }
+
+        .detailsDisplayArea {
+            position: relative;
+        }
+
+        .showDetailsBtn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30px;
+            border: 1px solid transparent;
+            line-height: 28px;
+            z-index: 1;
+            padding: 0 7px;
+        }
+
+        .showDetailsBtn:hover {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom-color: #fff;
+        }
+
+        .detailsItemsArea {
+            width: 100%;
+            position: absolute;
+            top: 29px;
+            left: 0;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px #ccc;
+            display: none;
+        }
+
+        #locationDetailsArea {
+            padding: 10px;
+        }
+
+        .item {
+            padding: 2px 0;
+            color: #999;
+            float: left;
+            line-height: 24px;
+        }
+
+        .item>a:hover {
+            background-color: #f4f4f4;
+        }
+
+        #locationDetailsArea>.item {
+            width: 60px;
+
+        }
+
+        #locationDetailsArea>.item>a {
+            padding: 0 8px;
+        }
+
+        .otherItems {
+            width: 100%;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            float: left;
+            margin-top: 10px;
+        }
+
+        .otherItem {
+            color: #999;
+            float: left;
+            line-height: 24px;
+            width: 50%;
+        }
+
+        .otherItem:hover {
+            color: #f20215;
+        }
+
+
+
+        #nav {
+            position: relative;
+            float: right;
+        }
+
+
+        .interval {
+            float: left;
+            display: block;
+            width: 1px;
+            height: 12px;
+            background-color: red;
+            margin: 9px 5px 0;
+        }
+
+        .icon {
+            width: 15px;
+            height: 12px;
+            display: inline-block;
+            background-image: url('./public/img/地区.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            margin-right: 8px;
+        }
+
+        .navItem {
+            float: left;
+            height: 30px;
+            line-height: 28px;
+            position: relative;
+        }
+
+        .navItemContainer {
+            border: 1px solid transparent;
+            position: relative;
+            z-index: 1;
+            padding: 0 7px;
+        }
+
+        .detailsBtn:hover {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom: 1px solid #fff;
+        }
+
+        .detailsItems {
+            position: absolute;
+            top: 29px;
+            left: 0;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 0 #ccc;
+        }
+
+        #detailsItems_myjd {
+            width: 280px;
+            padding: 10px 0 10px 15px;
+        }
+
+        #detailsItems_myjd>.item {
+            width: 126px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navBar">
+        <div id="navContainer">
+            <div id="locationContainer" class="detailsContainer">
+                <!-- 用于包裹左侧地址选择框的全部 -->
+                <div id="locationDisplayArea" class="detailsDisplayArea">
+                    <div id="locationBtn" class="showDetailsBtn">
+                        <a href="#"><i class="iconfont icon-location" style="color: #f20215;margin-right: 4px;"></i>北京</a>
+                    </div>
+                </div>
+                <ul id="locationDetailsArea" class="detailsItemsArea">
+                    <li class="item"><a href="#">上海</a></li>
+                    <li class="item"><a href="#">天津</a></li>
+                    <li class="item"><a href="#">北京</a></li>
+                    <li class="item"><a href="#">重庆</a></li>
+                    <li class="item"><a href="#">河北</a></li>
+                    <li class="item"><a href="#">山西</a></li>
+                    <li class="item"><a href="#">河南</a></li>
+                    <li class="item"><a href="#">辽宁</a></li>
+                    <li class="item"><a href="#">吉林</a></li>
+                    <li class="item"><a href="#">黑龙江</a></li>
+                    <li class="item"><a href="#">内蒙古</a></li>
+                    <li class="item"><a href="#">江苏</a></li>
+                    <li class="item"><a href="#">山东</a></li>
+                    <li class="item"><a href="#">安徽</a></li>
+                    <li class="item"><a href="#">浙江</a></li>
+                    <li class="item"><a href="#">福建</a></li>
+                    <li class="item"><a href="#">湖北</a></li>
+                    <li class="item"><a href="#">湖南</a></li>
+                    <li class="item"><a href="#">广东</a></li>
+                    <li class="item"><a href="#">广西</a></li>
+                    <li class="item"><a href="#">江西</a></li>
+                    <li class="item"><a href="#">贵州</a></li>
+                    <li class="item"><a href="#">海南</a></li>
+                    <li class="item"><a href="#">四川</a></li>
+                    <li class="item"><a href="#">云南</a></li>
+                    <li class="item"><a href="#">西藏</a></li>
+                    <li class="item"><a href="#">陕西</a></li>
+                    <li class="item"><a href="#">甘肃</a></li>
+                    <li class="item"><a href="#">青海</a></li>
+                    <li class="item"><a href="#">宁夏</a></li>
+                    <li class="item"><a href="#">新疆</a></li>
+                    <li class="item"><a href="#">港澳</a></li>
+                    <li class="item"><a href="#">台湾</a></li>
+                    <li class="item"><a href="#">钓鱼岛</a></li>
+                    <li class="item"><a href="#">海外</a></li>
+                    <ul class="otherItems">
+                        <li class="otherItem" style="width: 100%;margin: 9px 0;">地区专享版本</li>
+                        <li class="otherItem"><a href="#">中國台灣</a></li>
+                        <li class="otherItem"><a href="#">京东全球</a></li>
+                        <li class="otherItem"><a href="#">中國港澳</a></li>
+                    </ul>
+                    <ul class="otherItems">
+                        <li class="otherItem" style="width: 100%;margin: 9px 0;">Available Sites</li>
+                        <li class="otherItem" style="width: 50%;clear: left;">
+                            <a href="#"><i class="icon"></i>Global Site</a>
+                        </li>
+                        <li class="otherItem" style="width: 50%;">
+                            <a href="#"><i class="icon" style="background-position: -20px 0;"></i>Сайт
+                                России</a>
+                        </li>
+                        <li class="otherItem" style="width: 50%;">
+                            <a href="#"><i class="icon" style="background-position: 0px -15px;"></i>Situs
+                                Indonesia</a>
+                        </li>
+                        <li class="otherItem" style="width: 50%;">
+                            <a href="#"><i class="icon" style="background-position: -40px 0px;"></i>Sitio de
+                                España</a>
+                        </li>
+                        <li class="otherItem" style="width: 50%;">
+                            <a href="#"><i class="icon" style="background-position: -20px -15px;"></i>เว็บไซต์ประเทศไทย</a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+
+            <ul id="nav">
+                <li class="navItem" style="margin-right: 8px;">
+                    <a href="#">你好，请登录</a>&nbsp;&nbsp;<a href="#" style="color: #f20215;">免费注册</a>
+                </li>
+                <span class="interval"></span>
+                <li class="navItem">
+                    <div class="navItemContainer">
+                        <a href="#">我的订单</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li class="navItem">
+                    <div class="navItemContainer  detailsBtn">
+                        <a href="#">我的京东</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;overflow: hidden;font-size: 5px;"></i>
+                    </div>
+                    <ul class="detailsItems" id="detailsItems_myjd">
+                        <li class="item"><a href="#">待处理订单</a></li>
+                        <li class="item"><a href="#">我的问答</a></li>
+                        <li class="item"><a href="#">返修退换货</a></li>
+                        <li class="item"><a href="#">我的关注</a></li>
+                        <li class="item"><a href="#">降价商品</a></li>
+                        <!-- <span class="" style="clear: left;"></span> -->
+                        <li class="item" style="clear: left;"><a href="#">我的京豆</a></li>
+                        <li class="item"><a href="#">我的优惠券</a></li>
+                        <li class="item"><a href="#">我的白条</a></li>
+                        <li class="item"><a href="#">我的理财</a></li>
+                    </ul>
+                </li>
+                <span class="interval"></span>
+                <li class="navItem">
+
+                </li>
+                <span class="interval"></span>
+                <li class="navItem"></li>
+                <span class="interval"></span>
+                <li class="navItem"></li>
+                <span class="interval"></span>
+                <li class="navItem"></li>
+                <span class="interval"></span>
+                <li class="navItem"></li>
+                <span class="interval"></span>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            let aShowDetailsBtn = document.getElementsByClassName('showDetailsBtn')
+            let aDetailsItemsArea = document.getElementsByClassName('detailsItemsArea')
+
+            locationDetailsShow()
+
+            function locationDetailsShow() {
+                for (let i = 0; i < aShowDetailsBtn.length; i++) {
+                    aShowDetailsBtn[i].onmouseover = function () {
+                        aDetailsItemsArea[i].style.display = 'block'
+                    }
+
+                    aDetailsItemsArea[i].onmouseover = function () {
+                        aShowDetailsBtn[i].style.backgroundColor = '#fff'
+                        aShowDetailsBtn[i].style.border = '1px solid #ccc'
+                        aShowDetailsBtn[i].style.borderBottomColor = '#fff'
+                        aDetailsItemsArea[i].style.display = 'block'
+                    }
+
+                    aShowDetailsBtn[i].onmouseleave = function () {
+                        aDetailsItemsArea[i].style.display = 'none'
+                        aShowDetailsBtn[i].style = ''
+                    }
+
+                    aDetailsItemsArea[i].onmouseleave = function () {
+                        aDetailsItemsArea[i].style.display = 'none'
+                        aShowDetailsBtn[i].style = ''
+                    }
+                }
+            }
+
+            function rightNavDetailsShow() {
+
+            }
+        }
+    </script>
+</body>
+
+</html>

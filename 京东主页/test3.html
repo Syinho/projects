@@ -1,0 +1,271 @@
+<!-- 京东导航条 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/iconfont1/font_xxyh7rf8h9b/iconfont.css">
+    <style>
+        /* reset start */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* body {
+        overflow: hidden; 
+        } */
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* reset end */
+        .top-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #e3e4e5;
+            font-size: 12px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #container {
+            width: 1190px;
+            background-color: #e3e4e5;
+            margin: 0 auto;
+            color: #999;
+            line-height: 29px;
+            /* overflow: hidden; */
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .address {
+            float: left;
+            padding: 0 7px;
+        }
+
+
+
+        .nav {
+            float: right;
+        }
+
+        .nav li {
+            float: left;
+        }
+
+        .dt,
+        .nav>li>div {
+            padding: 0 7px;
+            position: relative;
+        }
+
+
+        .interval {
+            float: left;
+            width: 1px;
+            height: 14px;
+            background-color: #ccc;
+            margin: 8px 5px 0 5px;
+        }
+
+        a:link,
+        a:visited,
+        a:active {
+            color: #999;
+        }
+
+        .focus:hover {
+            color: #f20215;
+        }
+
+        .dt:hover {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom: 1px solid #fff;
+            line-height: 28px;
+        }
+
+        .dl {
+            position: absolute;
+            width: 300px;
+            top: 30px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 0 #ccc;
+        }
+
+        .dl>li {
+            float: left;
+            line-height: 24px;
+            width: 60px;
+            padding: 2px 0;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div id="container" class="clearfix">
+            <div class="address">
+                <div class="dt">
+                    <i class="iconfont icon-location customIcon" style="color: #f20215;margin-right: 4px;"></i>
+                    <span class="focus">北京</span>
+                    <ul class="dl">
+                        <li><a href="#">北京</a></li>
+                        <li><a href="#">上海</a></li>
+                        <li><a href="#">天津</a></li>
+                        <li><a href="#">重庆</a></li>
+                        <li><a href="#">河北</a></li>
+                        <li><a href="#">山西</a></li>
+                        <li><a href="#">河南</a></li>
+                        <li><a href="#">辽宁</a></li>
+                        <li><a href="#">吉林</a></li>
+                        <li><a href="#">黑龙江</a></li>
+                        <li><a href="#">内蒙古</a></li>
+                        <li><a href="#">江苏</a></li>
+                        <li><a href="#">山东</a></li>
+                        <li><a href="#">安徽</a></li>
+                        <li><a href="#">浙江</a></li>
+                        <li><a href="#">福建</a></li>
+                        <li><a href="#">湖北</a></li>
+                        <li><a href="#">湖南</a></li>
+                        <li><a href="#">广东</a></li>
+                        <li><a href="#">广西</a></li>
+                        <li><a href="#">江西</a></li>
+                        <li><a href="#">贵州</a></li>
+                        <li><a href="#">海南</a></li>
+                        <li><a href="#">四川</a></li>
+                        <li><a href="#">云南</a></li>
+                        <li><a href="#">西藏</a></li>
+                        <li><a href="#">陕西</a></li>
+                        <li><a href="#">甘肃</a></li>
+                        <li><a href="#">青海</a></li>
+                        <li><a href="#">宁夏</a></li>
+                        <li><a href="#">新疆</a></li>
+                        <li><a href="#">港澳</a></li>
+                        <li><a href="#">台湾</a></li>
+                        <li><a href="#">钓鱼岛</a></li>
+                        <li><a href="#">海外</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <div class="navLi">
+                        <a href="#" class="focus">你好，请登录</a>&nbsp;&nbsp;<a href="#" style="color: #f20215;">免费注册</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="navLi">
+                        <a href="#" class="focus">我的订单</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+                <li>
+                    <div class="dt">
+                        <a href="#" class="focus">我的京东</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;overflow: hidden;font-size: 5px;"></i>
+                        <ul class="dl">
+                            <li><a href="#">待处理订单</a></li>
+                            <li><a href="#">我的问答</a></li>
+                            <li><a href="#">返修退换货</a></li>
+                            <li><a href="#">我的关注</a></li>
+                            <li><a href="#">降价商品</a></li>
+                            <hr>
+                            <li><a href="#">我的京豆</a></li>
+                            <li><a href="#">我的优惠券</a></li>
+                            <li><a href="#">我的白条</a></li>
+                            <li><a href="#">我的理财</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <span class="interval"></span>
+
+                <li>
+                    <div class="navLi">
+                        <a href="#" class="focus">京东会员</a>
+                    </div>
+                </li>
+                <span class="interval"></span>
+
+                <li>
+                    <div class="dt">
+                        <a href="#" style="color: #f20215;">企业采购</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+
+                <li>
+                    <div class="dt">
+                        <a href="#">客户服务</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+
+                <li>
+                    <div class="dt">
+                        <a href="#">网站导航</a>
+                        <i class="iconfont icon-jiantou" style="width: 12px;height: 12px;font-size: 5px;"></i>
+                    </div>
+                </li>
+                <span class="interval"></span>
+
+                <li>
+                    <div class="navLi">
+                        <a href="#">手机京东</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // let oNav = document.querySelector('.nav')
+        // let aLiNav = oNav.getElementsByTagName('li')
+        // console.log(aLiNav.length);
+
+
+        // addInterval()
+
+        // function addInterval() {
+        //     for (let i = 0; i < aLiNav.length; i++) {
+        //         let oSpan = document.createElement('span')
+        //         oSpan.className = 'interval'
+        //         oNav.insertBefore(oSpan, aLiNav[i])
+        //     }
+        //     let oSpanNav = oNav.getElementsByTagName('span')[0]
+        //     oNav.removeChild(oSpanNav)
+        // }
+    </script>
+</body>
+
+</html>

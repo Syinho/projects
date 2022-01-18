@@ -1,0 +1,45 @@
+@rem: 1080/10rem;
+
+#app {
+    #container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: (270/@rem);
+        width: 100%;
+
+        #brandNavContainer {
+            width: 100%;
+            overflow: hidden;
+
+            #brandNavWrapper {
+                height: (177/@rem);
+                padding: (31/@rem) 0 (14/@rem);
+                white-space: nowrap;
+                font-size: 0;
+
+                li {
+                    height: (129/@rem);
+                    text-align: center;
+                    line-height: (129/@rem);
+                    font-size: (67.5/@rem);
+                    padding: 0 (38/@rem);
+                    display: inline-block;
+
+                    a {
+                        color: #020202;
+                    }
+
+                    &.active {
+                        background-color: #690;
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
